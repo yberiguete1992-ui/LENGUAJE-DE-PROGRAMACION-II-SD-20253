@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ACTIVIDAD PRACTICA2 YEISON/1.0.0": {
+        "runtime": {
+          "ACTIVIDAD PRACTICA2 YEISON.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ACTIVIDAD PRACTICA2 YEISON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
