@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MINIMARKET_YEISONYBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORIAS">
+    <Key>
+      <PropertyRef Name="CATEGORIAID" />
+    </Key>
+    <Property Name="CATEGORIAID" Type="int" Nullable="false" />
+    <Property Name="NOMBRECATEGORIA" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTES">
+    <Key>
+      <PropertyRef Name="CLIENTEID" />
+    </Key>
+    <Property Name="CLIENTEID" Type="int" Nullable="false" />
+    <Property Name="NOMBRECOMPLETO" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CORREOELECTRONICO" Type="varchar" MaxLength="100" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="15" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="PRODUCTOS">
+    <Key>
+      <PropertyRef Name="PRODUCTOID" />
+    </Key>
+    <Property Name="PRODUCTOID" Type="int" Nullable="false" />
+    <Property Name="NOMBREPRODUCTO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="255" />
+    <Property Name="PRECIO" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Stock" Type="int" Nullable="false" />
+    <Property Name="CATEGORIAID" Type="int" />
+  </EntityType>
+  <EntityType Name="PROVEEDORES">
+    <Key>
+      <PropertyRef Name="PROVEEDORID" />
+    </Key>
+    <Property Name="PROVEEDORID" Type="int" Nullable="false" />
+    <Property Name="NOMBREPROVEEDOR" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="15" />
+    <Property Name="CORREOELECTRONIC" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__PRODUCTOS__CATEG__3A81B327">
+    <End Role="CATEGORIAS" Type="Self.CATEGORIAS" Multiplicity="0..1" />
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIAS">
+        <PropertyRef Name="CATEGORIAID" />
+      </Principal>
+      <Dependent Role="PRODUCTOS">
+        <PropertyRef Name="CATEGORIAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MINIMARKET_YEISONYBDModelStoreContainer">
+    <EntitySet Name="CATEGORIAS" EntityType="Self.CATEGORIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVEEDORES" EntityType="Self.PROVEEDORES" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__PRODUCTOS__CATEG__3A81B327" Association="Self.FK__PRODUCTOS__CATEG__3A81B327">
+      <End Role="CATEGORIAS" EntitySet="CATEGORIAS" />
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

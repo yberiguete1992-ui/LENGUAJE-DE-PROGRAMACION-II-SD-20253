@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MINIMARKET_YEISONYBDModelStoreContainer" CdmEntityContainer="MINIMARKET_YEISONYBDEntities">
+    <EntitySetMapping Name="CATEGORIAS">
+      <EntityTypeMapping TypeName="MINIMARKET_YEISONYBDModel.CATEGORIA">
+        <MappingFragment StoreEntitySet="CATEGORIAS">
+          <ScalarProperty Name="CATEGORIAID" ColumnName="CATEGORIAID" />
+          <ScalarProperty Name="NOMBRECATEGORIA" ColumnName="NOMBRECATEGORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTES">
+      <EntityTypeMapping TypeName="MINIMARKET_YEISONYBDModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTES">
+          <ScalarProperty Name="CLIENTEID" ColumnName="CLIENTEID" />
+          <ScalarProperty Name="NOMBRECOMPLETO" ColumnName="NOMBRECOMPLETO" />
+          <ScalarProperty Name="CORREOELECTRONICO" ColumnName="CORREOELECTRONICO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOS">
+      <EntityTypeMapping TypeName="MINIMARKET_YEISONYBDModel.PRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTOS">
+          <ScalarProperty Name="PRODUCTOID" ColumnName="PRODUCTOID" />
+          <ScalarProperty Name="NOMBREPRODUCTO" ColumnName="NOMBREPRODUCTO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="CATEGORIAID" ColumnName="CATEGORIAID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDORES">
+      <EntityTypeMapping TypeName="MINIMARKET_YEISONYBDModel.PROVEEDORE">
+        <MappingFragment StoreEntitySet="PROVEEDORES">
+          <ScalarProperty Name="PROVEEDORID" ColumnName="PROVEEDORID" />
+          <ScalarProperty Name="NOMBREPROVEEDOR" ColumnName="NOMBREPROVEEDOR" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="CORREOELECTRONIC" ColumnName="CORREOELECTRONIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
